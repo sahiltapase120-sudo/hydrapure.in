@@ -66,12 +66,43 @@
   <!-- Contact Section -->
   <section id="contact" class="px-6 py-16">
     <h3 class="text-3xl font-semibold mb-4 text-center">Contact Us</h3>
-    <form class="max-w-xl mx-auto space-y-4">
-      <input type="text" placeholder="Your Name" class="w-full p-3 border rounded" />
-      <input type="email" placeholder="Your Email" class="w-full p-3 border rounded" />
-      <textarea placeholder="Your Message" class="w-full p-3 border rounded"></textarea>
-      <button type="submit" class="bg-cyan-600 text-white px-6 py-2 rounded hover:bg-cyan-700">Send Message</button>
-    </form>
+   <form action="https://formspree.io/f/xeozzerl" method="POST" class="max-w-xl mx-auto space-y-4">
+  <input type="text" name="city" placeholder="City" required class="w-full p-3 border rounded" />
+  <input type="text" name="state" placeholder="State" required class="w-full p-3 border rounded" />
+  <input type="number" name="shop_area" placeholder="Shop Area (in sq ft)" required class="w-full p-3 border rounded" />
+  <input type="number" name="godown_area" placeholder="Godown Area (in sq ft)" required class="w-full p-3 border rounded" />
+  
+  <select name="vehicle_availability" required class="w-full p-3 border rounded">
+    <option value="">Vehicle for Delivery Type</option>
+    <option value="yes-own">Yes - Own Vehicle</option>
+    <option value="yes-rented">Yes - Rented Vehicle</option>
+    <option value="no">No</option>
+  </select>
+  
+  <input type="text" name="occupation" placeholder="Current Occupation" required class="w-full p-3 border rounded" />
+  
+  <select name="parking_availability" required class="w-full p-3 border rounded">
+    <option value="">Availability of Parking</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+  
+  <select name="fssai_license" required class="w-full p-3 border rounded">
+    <option value="">FSSAI License</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+    <option value="applied">Applied</option>
+  </select>
+  
+  <input type="number" name="manpower" placeholder="Manpower (No. of People)" required class="w-full p-3 border rounded" />
+  
+  <textarea name="godown_address" placeholder="Godown Address" rows="2" required class="w-full p-3 border rounded"></textarea>
+  
+  <textarea name="shop_address" placeholder="Shop Address" rows="2" required class="w-full p-3 border rounded"></textarea>
+  
+  <button type="submit" class="bg-cyan-600 text-white px-6 py-2 rounded hover:bg-cyan-700">Submit</button>
+</form>
+
   </section>
 
   <!-- Footer -->
