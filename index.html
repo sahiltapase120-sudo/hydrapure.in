@@ -10,104 +10,102 @@
     .bubble {
       position: absolute;
       bottom: -50px;
-      width: 25px;
-      height: 25px;
-      background-color: rgba(255, 255, 255, 0.2);
+      width: 50px;
+      height: 50px;
+      background-color: rgba(255, 255, 255, 0.4);
       border-radius: 50%;
-      animation: rise 10s infinite ease-in;
+      animation: rise 15s infinite ease-in;
     }
     @keyframes rise {
-      0% { transform: translateY(0); opacity: 0.5; }
-      100% { transform: translateY(-1000px); opacity: 0; }
+      0% { transform: translateY(0); opacity: 0.7; }
+      100% { transform: translateY(-1200px); opacity: 0; }
     }
     .glow-text {
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.4);
     }
     .fade-in { animation: fadeIn 1.5s ease-in-out forwards; opacity: 0; }
     @keyframes fadeIn { to { opacity: 1; } }
+    .form-bg {
+      background: linear-gradient(135deg, #e0f7fa, #ffffff);
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+    }
+    .wave {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      z-index: 0;
+    }
+    .floating-icon {
+      position: absolute;
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    .parallax {
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
   </style>
 </head>
-<body class="bg-cyan-100 text-gray-800 font-sans">
+<body class="bg-cyan-100 text-gray-800 font-sans relative overflow-x-hidden">
+
+  <!-- Floating Icons -->
+  <img src="https://cdn-icons-png.flaticon.com/512/2933/2933186.png" class="floating-icon w-12 top-10 left-5" style="animation-delay: 1s;">
+  <img src="https://cdn-icons-png.flaticon.com/512/2933/2933180.png" class="floating-icon w-10 top-40 right-6" style="animation-delay: 2.5s;">
+  <img src="https://cdn-icons-png.flaticon.com/512/2933/2933191.png" class="floating-icon w-8 top-64 left-10" style="animation-delay: 4s;">
 
   <!-- Hero Section -->
-  <section id="home" class="relative h-screen flex flex-col justify-center items-center text-white text-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
+  <section id="home" class="relative h-screen flex flex-col justify-center items-center text-white text-center parallax" style="background-image: url('https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
     <div class="absolute inset-0 bg-gradient-to-b from-cyan-900/70 to-cyan-800/80 backdrop-blur-md"></div>
     <div class="absolute w-full h-full overflow-hidden z-0">
       <div class="bubble" style="left: 10%; animation-delay: 1s;"></div>
-      <div class="bubble" style="left: 25%; animation-delay: 3s;"></div>
-      <div class="bubble" style="left: 50%; animation-delay: 5s;"></div>
-      <div class="bubble" style="left: 70%; animation-delay: 2s;"></div>
-      <div class="bubble" style="left: 85%; animation-delay: 4s;"></div>
+      <div class="bubble" style="left: 20%; animation-delay: 2s;"></div>
+      <div class="bubble" style="left: 35%; animation-delay: 3s;"></div>
+      <div class="bubble" style="left: 50%; animation-delay: 4s;"></div>
+      <div class="bubble" style="left: 65%; animation-delay: 5s;"></div>
+      <div class="bubble" style="left: 80%; animation-delay: 6s;"></div>
+      <div class="bubble" style="left: 90%; animation-delay: 7s;"></div>
     </div>
     <div class="relative z-10 text-shadow animate-fade-in-down px-4">
       <h1 class="text-5xl md:text-6xl font-extrabold mb-4 tracking-wide glow-text">HydraPure</h1>
       <p class="text-2xl md:text-3xl font-light mb-8">Stay Hydrated with Style & Purity</p>
-      <a href="#products" class="inline-block px-8 py-3 bg-white text-cyan-800 font-semibold rounded-full shadow-lg border-2 border-white hover:border-cyan-300 hover:bg-cyan-50 transition-all duration-300 hover:scale-105 hover:shadow-xl">Shop Now</a>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-16 bg-white fade-in">
-    <div class="max-w-4xl mx-auto text-center px-4">
-      <h2 class="text-4xl font-bold mb-6 text-cyan-800">About Us</h2>
-      <p class="text-lg text-gray-700">HydraPure is on a mission to make hydration stylish, sustainable, and accessible. Our BPA-free bottles are designed for modern life — light, leak-proof, and long-lasting.</p>
-    </div>
-  </section>
-
-  <!-- Products Section -->
-  <section id="products" class="py-16 bg-cyan-50 fade-in">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-4xl font-bold text-center text-cyan-800 mb-10">Our Products</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
-          <div class="h-40 bg-cyan-100 rounded mb-4"></div>
-          <h3 class="text-xl font-semibold mb-2 text-cyan-900">Classic Hydra</h3>
-          <p class="text-gray-700">Perfect everyday bottle with leak-proof lid and stylish design.</p>
-        </div>
-        <div class="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
-          <div class="h-40 bg-cyan-100 rounded mb-4"></div>
-          <h3 class="text-xl font-semibold mb-2 text-cyan-900">Hydra Steel</h3>
-          <p class="text-gray-700">Insulated stainless steel bottle to keep your drinks hot or cold.</p>
-        </div>
-        <div class="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
-          <div class="h-40 bg-cyan-100 rounded mb-4"></div>
-          <h3 class="text-xl font-semibold mb-2 text-cyan-900">Mini Hydra</h3>
-          <p class="text-gray-700">Compact and cute — great for kids or quick sips on the go.</p>
-        </div>
-      </div>
+      <a href="#contact" class="inline-block px-8 py-3 bg-white text-cyan-800 font-semibold rounded-full shadow-lg border-2 border-white hover:border-cyan-300 hover:bg-cyan-50 transition-all duration-300 hover:scale-105 hover:shadow-xl">Contact Us</a>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-white fade-in">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-4xl font-bold text-center text-cyan-800 mb-10">Contact Us</h2>
-      <form action="https://formspree.io/f/xeozzerl" method="POST" class="space-y-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <input type="text" name="name" placeholder="Name" class="p-3 border rounded w-full" required>
-          <input type="email" name="email" placeholder="Email" class="p-3 border rounded w-full" required>
-          <input type="tel" name="phone" placeholder="Phone" class="p-3 border rounded w-full" required>
-          <input type="text" name="city" placeholder="City" class="p-3 border rounded w-full" required>
-          <input type="text" name="state" placeholder="State" class="p-3 border rounded w-full" required>
-          <input type="text" name="shop_address" placeholder="Shop Address" class="p-3 border rounded w-full">
-          <input type="text" name="godown_address" placeholder="Godown Address" class="p-3 border rounded w-full">
-          <input type="text" name="shop_area" placeholder="Shop Area (in sq.ft)" class="p-3 border rounded w-full">
-          <input type="text" name="godown_area" placeholder="Godown Area (in sq.ft)" class="p-3 border rounded w-full">
-          <input type="text" name="vehicle_availability" placeholder="Availability of Vehicle" class="p-3 border rounded w-full">
-          <input type="text" name="manpower" placeholder="Availability of Manpower" class="p-3 border rounded w-full">
-          <input type="text" name="parking" placeholder="Availability of Parking" class="p-3 border rounded w-full">
+  <section id="contact" class="py-16 px-4 bg-white relative z-10">
+    <div class="max-w-4xl mx-auto form-bg fade-in">
+      <h2 class="text-3xl font-bold text-center mb-6 text-cyan-800">Contact Us</h2>
+      <form action="https://formspree.io/f/xeozzerl" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="text" name="name" placeholder="Name" required class="p-3 border rounded">
+        <input type="email" name="email" placeholder="Email" required class="p-3 border rounded">
+        <input type="tel" name="phone" placeholder="Phone" required class="p-3 border rounded">
+        <input type="text" name="city" placeholder="City" required class="p-3 border rounded">
+        <input type="text" name="state" placeholder="State" required class="p-3 border rounded">
+        <input type="text" name="shop_address" placeholder="Shop Address" required class="p-3 border rounded">
+        <input type="text" name="godown_address" placeholder="Godown Address" class="p-3 border rounded">
+        <input type="text" name="shop_area" placeholder="Shop Area (in sq ft)" class="p-3 border rounded">
+        <input type="text" name="godown_area" placeholder="Godown Area (in sq ft)" class="p-3 border rounded">
+        <input type="text" name="vehicle" placeholder="Availability of Vehicle (Yes/No)" class="p-3 border rounded">
+        <input type="text" name="manpower" placeholder="Availability of Manpower (Yes/No)" class="p-3 border rounded">
+        <input type="text" name="parking" placeholder="Availability of Parking (Yes/No)" class="p-3 border rounded">
+        <input type="text" name="occupation" placeholder="Current Occupation" class="p-3 border rounded">
+        <div class="md:col-span-2 text-center mt-4">
+          <button type="submit" class="bg-black text-white px-6 py-3 rounded-full shadow-md hover:scale-105 transition">Submit</button>
         </div>
-        <textarea name="occupation" placeholder="Current Occupation" class="p-3 border rounded w-full h-24"></textarea>
-        <button type="submit" class="w-full bg-black hover:bg-gray-900 text-white py-2 rounded transition duration-300 transform hover:scale-105">Submit</button>
-        <p id="success-message" class="success-message text-green-600 font-medium mt-4 hidden">Thanks for contacting us! We’ll get back to you soon.</p>
       </form>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-cyan-900 text-white text-center py-6 fade-in">
-    <p>&copy; 2025 HydraPure. All rights reserved.</p>
-  </footer>
+  <!-- Sound Effect Toggle -->
+  <audio id="splashSound" src="https://www.soundjay.com/nature/water-bubble-01a.mp3" preload="auto"></audio>
+  <button onclick="document.getElementById('splashSound').play();" class="fixed bottom-4 right-4 bg-cyan-700 text-white px-4 py-2 rounded-full shadow-md hover:bg-cyan-900 transition">🔊 Splash</button>
 
 </body>
 </html>
