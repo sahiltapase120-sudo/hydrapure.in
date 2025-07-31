@@ -10,6 +10,9 @@
     #loading-spinner {
       display: none;
     }
+    button[type="submit"] {
+      display: block;
+    }
   </style>
 </head>
 <body class="bg-white text-gray-800">
@@ -44,19 +47,16 @@
     <h3 class="text-3xl font-semibold text-center mb-8">Our Products</h3>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
       <div class="bg-white p-6 rounded-lg shadow text-center">
-        <div class="h-48 bg-gray-200 mb-4"></div>
+        <div class="h-48 bg-gray-200 mb-4 flex items-center justify-center">Coming Soon</div>
         <h4 class="text-xl font-medium mb-2">HydraPure Classic</h4>
-        <p class="text-sm">Coming Soon</p>
       </div>
       <div class="bg-white p-6 rounded-lg shadow text-center">
-        <div class="h-48 bg-gray-200 mb-4"></div>
+        <div class="h-48 bg-gray-200 mb-4 flex items-center justify-center">Coming Soon</div>
         <h4 class="text-xl font-medium mb-2">HydraPure Copper</h4>
-        <p class="text-sm">Coming Soon</p>
       </div>
       <div class="bg-white p-6 rounded-lg shadow text-center">
-        <div class="h-48 bg-gray-200 mb-4"></div>
+        <div class="h-48 bg-gray-200 mb-4 flex items-center justify-center">Coming Soon</div>
         <h4 class="text-xl font-medium mb-2">HydraPure Green</h4>
-        <p class="text-sm">Coming Soon</p>
       </div>
     </div>
   </section>
@@ -93,7 +93,7 @@
       <textarea name="shop_address" rows="2" placeholder="Shop Address" required class="w-full p-3 border rounded"></textarea>
       <textarea name="godown_address" rows="2" placeholder="Godown Address" required class="w-full p-3 border rounded"></textarea>
 
-      <button type="submit" class="bg-cyan-600 text-white px-4 py-2 rounded hover:bg-cyan-700 w-full">
+      <button type="submit" class="bg-cyan-600 text-white px-4 py-2 rounded hover:bg-cyan-700 w-full block">
         Submit
       </button>
 
