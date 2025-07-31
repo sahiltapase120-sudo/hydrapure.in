@@ -6,140 +6,203 @@
   <title>HydraPure | Stay Hydrated!</title>
   <meta name="description" content="HydraPure water bottles - Stay Hydrated with style and purity." />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
   <style>
-    #loading-spinner {
+    html {
+      scroll-behavior: smooth;
+    }
+    .success-message {
       display: none;
     }
-    button[type="submit"] {
-      display: block;
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      width: 20px;
+      height: 20px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      animation: rise 8s infinite ease-in;
+    }
+    @keyframes rise {
+      0% { transform: translateY(0); opacity: 0.5; }
+      100% { transform: translateY(-800px); opacity: 0; }
     }
   </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-cyan-100 text-gray-800 font-sans overflow-x-hidden">
 
-  <!-- Navbar -->
-  <nav class="bg-cyan-600 text-white px-6 py-4 flex justify-between items-center">
-    <h1 class="text-2xl font-bold">HydraPure</h1>
-    <ul class="flex gap-6">
-      <li><a href="#home" class="hover:underline">Home</a></li>
-      <li><a href="#about" class="hover:underline">About</a></li>
-      <li><a href="#products" class="hover:underline">Products</a></li>
-      <li><a href="#contact" class="hover:underline">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Home Section -->
-  <section id="home" class="text-center py-20 bg-cyan-50">
-    <h2 class="text-4xl font-extrabold mb-4">Stay Hydrated with HydraPure</h2>
-    <p class="text-lg">Eco-friendly, durable, and stylish water bottles for everyday hydration.</p>
+  <!-- Hero Section with Background & Overlay -->
+  <section id="home" class="relative h-screen flex flex-col justify-center items-center text-white text-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
+    <div class="absolute inset-0 bg-cyan-900 bg-opacity-70 z-0"></div>
+    <div class="relative z-10 animate-bounce-slow">
+      <h1 class="text-5xl md:text-6xl font-bold drop-shadow-lg mb-4">HydraPure</h1>
+      <p class="text-2xl md:text-3xl drop-shadow-sm">Stay Hydrated with Style & Purity</p>
+      <a href="#products" class="mt-8 inline-block bg-white text-cyan-700 font-bold px-6 py-3 rounded-full shadow-lg hover:scale-110 hover:rotate-1 transition duration-300">Shop Now</a>
+    </div>
+    <!-- Bubbles -->
+    <div class="bubble" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="bubble" style="left: 20%; animation-delay: 2s;"></div>
+    <div class="bubble" style="left: 70%; animation-delay: 4s;"></div>
+    <div class="bubble" style="left: 50%; animation-delay: 1s;"></div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="px-6 py-16">
-    <h3 class="text-3xl font-semibold mb-4">About Us</h3>
-    <p class="text-gray-700 max-w-2xl mx-auto">
-      At HydraPure, we believe great hydration starts with a great mindset. Our mission is to create high-quality water bottles that keep you refreshed and driven every day.
-    </p>
+  <!-- About Us -->
+  <section id="about" class="py-20 px-6 bg-cyan-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">About Us</h2>
+      <p class="text-lg">At HydraPure, we believe in the power of clean hydration. Our bottles are eco-friendly, reusable, and built for style. Join us in our mission to reduce plastic and stay cool!</p>
+    </div>
   </section>
 
-  <!-- Products Section -->
-  <section id="products" class="bg-cyan-100 px-6 py-16">
-    <h3 class="text-3xl font-semibold text-center mb-8">Our Products</h3>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      <div class="bg-white p-6 rounded-lg shadow text-center">
-        <div class="h-48 bg-gray-200 mb-4 flex items-center justify-center">Coming Soon</div>
-        <h4 class="text-xl font-medium mb-2">HydraPure Classic</h4>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow text-center">
-        <div class="h-48 bg-gray-200 mb-4 flex items-center justify-center">Coming Soon</div>
-        <h4 class="text-xl font-medium mb-2">HydraPure Copper</h4>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow text-center">
-        <div class="h-48 bg-gray-200 mb-4 flex items-center justify-center">Coming Soon</div>
-        <h4 class="text-xl font-medium mb-2">HydraPure Green</h4>
+  <!-- Products -->
+  <section id="products" class="py-20 px-6 bg-cyan-200">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-10">Our Products</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl shadow-xl p-6 transform transition-transform hover:scale-105 hover:rotate-1">
+          <div class="bg-cyan-100 h-40 mb-4 rounded">Image</div>
+          <h3 class="text-xl font-semibold mb-2">HydraPure Classic</h3>
+          <p>Timeless & durable for everyday hydration.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-xl p-6 transform transition-transform hover:scale-105 hover:-rotate-1">
+          <div class="bg-cyan-100 h-40 mb-4 rounded">Image</div>
+          <h3 class="text-xl font-semibold mb-2">HydraPure Sport</h3>
+          <p>Grippy, lightweight, and leak-proof.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-xl p-6 transform transition-transform hover:scale-105 hover:rotate-2">
+          <div class="bg-cyan-100 h-40 mb-4 rounded">Image</div>
+          <h3 class="text-xl font-semibold mb-2">HydraPure Kids</h3>
+          <p>Fun colors, safe design for little ones.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="px-6 py-16">
-    <h3 class="text-3xl font-semibold mb-6 text-center">Contact Us</h3>
-    <form action="https://formspree.io/f/xeozzerl" method="POST" class="max-w-2xl mx-auto space-y-4" id="contact-form">
-      <input type="text" name="name" placeholder="Name" required class="w-full p-3 border rounded" />
-      <input type="tel" name="phone" placeholder="Phone No." required class="w-full p-3 border rounded" />
-      <input type="email" name="email" placeholder="Email" required class="w-full p-3 border rounded" />
-      <input type="text" name="city" placeholder="City" required class="w-full p-3 border rounded" />
-      <input type="text" name="state" placeholder="State" required class="w-full p-3 border rounded" />
-      <input type="number" name="shop_area" placeholder="Shop Area (in sq ft)" required class="w-full p-3 border rounded" />
-      <input type="number" name="godown_area" placeholder="Godown Area (in sq ft)" required class="w-full p-3 border rounded" />
 
-      <select name="vehicle" required class="w-full p-3 border rounded">
-        <option value="">Type of Vehicle for Transport</option>
-        <option value="own">Own Vehicle</option>
-        <option value="rented">Rented Vehicle</option>
-        <option value="none">No Vehicle</option>
-      </select>
+  <!-- Contact Form -->
+<section id="contact" class="py-20 px-6 bg-white">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
+    <form action="https://formspree.io/f/xeozzerl" method="POST" class="space-y-4 bg-cyan-50 p-6 rounded-xl shadow-md">
+      <!-- Name -->
+      <div>
+        <label for="name" class="block text-sm font-medium mb-1">Name</label>
+        <input type="text" id="name" name="name" required class="w-full border border-gray-300 p-2 rounded">
+      </div>
 
-      <input type="text" name="occupation" placeholder="Current Occupation" required class="w-full p-3 border rounded" />
+      <!-- Email -->
+      <div>
+        <label for="email" class="block text-sm font-medium mb-1">Email</label>
+        <input type="email" id="email" name="_replyto" required class="w-full border border-gray-300 p-2 rounded">
+      </div>
 
-      <select name="parking" required class="w-full p-3 border rounded">
-        <option value="">Availability of Parking</option>
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-      </select>
+      <!-- Phone -->
+      <div>
+        <label for="phone" class="block text-sm font-medium mb-1">Phone</label>
+        <input type="tel" id="phone" name="phone" required class="w-full border border-gray-300 p-2 rounded">
+      </div>
 
-      <input type="number" name="manpower" placeholder="Manpower (No. of People)" required class="w-full p-3 border rounded" />
+      <!-- City -->
+      <div>
+        <label for="city" class="block text-sm font-medium mb-1">City</label>
+        <input type="text" id="city" name="city" required class="w-full border border-gray-300 p-2 rounded">
+      </div>
 
-      <textarea name="shop_address" rows="2" placeholder="Shop Address" required class="w-full p-3 border rounded"></textarea>
-      <textarea name="godown_address" rows="2" placeholder="Godown Address" required class="w-full p-3 border rounded"></textarea>
+      <!-- State -->
+      <div>
+        <label for="state" class="block text-sm font-medium mb-1">State</label>
+        <input type="text" id="state" name="state" required class="w-full border border-gray-300 p-2 rounded">
+      </div>
 
-     <button type="submit" class="bg-black text-white px-4 py-3 rounded hover:bg-gray-800 w-full font-bold text-lg">
-  Submit
-</button>
+      <!-- Shop Address -->
+      <div>
+        <label for="shopAddress" class="block text-sm font-medium mb-1">Shop Address</label>
+        <textarea id="shopAddress" name="shopAddress" rows="2" class="w-full border border-gray-300 p-2 rounded"></textarea>
+      </div>
 
+      <!-- Godown Address -->
+      <div>
+        <label for="godownAddress" class="block text-sm font-medium mb-1">Godown Address</label>
+        <textarea id="godownAddress" name="godownAddress" rows="2" class="w-full border border-gray-300 p-2 rounded"></textarea>
+      </div>
 
-      <!-- Loading Spinner -->
-      <div id="loading-spinner" class="text-center text-cyan-600 font-semibold">Submitting...</div>
-      <!-- Success Message -->
-      <div id="success-message" class="hidden text-green-600 text-center font-semibold">Thank you! Your form has been submitted successfully.</div>
+      <!-- Shop Area -->
+      <div>
+        <label for="shopArea" class="block text-sm font-medium mb-1">Shop Area (sq ft)</label>
+        <input type="text" id="shopArea" name="shopArea" class="w-full border border-gray-300 p-2 rounded">
+      </div>
+
+      <!-- Godown Area -->
+      <div>
+        <label for="godownArea" class="block text-sm font-medium mb-1">Godown Area (sq ft)</label>
+        <input type="text" id="godownArea" name="godownArea" class="w-full border border-gray-300 p-2 rounded">
+      </div>
+
+      <!-- Availability of Vehicle -->
+      <div>
+        <label for="vehicle" class="block text-sm font-medium mb-1">Availability of Vehicle</label>
+        <select id="vehicle" name="vehicle" class="w-full border border-gray-300 p-2 rounded">
+          <option value="">Select</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
+
+      <!-- Availability of Manpower -->
+      <div>
+        <label for="manpower" class="block text-sm font-medium mb-1">Availability of Manpower</label>
+        <select id="manpower" name="manpower" class="w-full border border-gray-300 p-2 rounded">
+          <option value="">Select</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
+
+      <!-- Availability of Parking -->
+      <div>
+        <label for="parking" class="block text-sm font-medium mb-1">Availability of Parking</label>
+        <select id="parking" name="parking" class="w-full border border-gray-300 p-2 rounded">
+          <option value="">Select</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
+
+      <!-- Current Occupation -->
+      <div>
+        <label for="occupation" class="block text-sm font-medium mb-1">Current Occupation</label>
+        <input type="text" id="occupation" name="occupation" class="w-full border border-gray-300 p-2 rounded">
+      </div>
+
+      <!-- Submit Button -->
+    <!-- Submit Button -->
+<button type="submit" class="w-full bg-black hover:bg-gray-900 text-white py-2 rounded transition duration-300 transform hover:scale-105">Submit</button>
+<p id="success-message" class="success-message text-green-600 font-medium mt-4">Thanks for contacting us! We’ll get back to you soon.</p>
+
     </form>
-  </section>
+  </div>
+</section>
+
 
   <!-- Footer -->
-  <footer class="text-center bg-cyan-600 text-white py-6">
-    &copy; 2025 HydraPure. All rights reserved.
+  <footer class="bg-cyan-800 text-white text-center py-6">
+    <p>&copy; 2025 HydraPure. All rights reserved.</p>
   </footer>
 
+  <!-- Animation Scripts -->
   <script>
-    const form = document.getElementById("contact-form");
-    const successMessage = document.getElementById("success-message");
-    const spinner = document.getElementById("loading-spinner");
-
-    form.addEventListener("submit", async function (e) {
-      e.preventDefault();
-
-      successMessage.classList.add("hidden");
-      spinner.style.display = "block";
-
-      const formData = new FormData(form);
-
-      const response = await fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: {
-          Accept: "application/json"
-        }
-      });
-
-      spinner.style.display = "none";
-
-      if (response.ok) {
-        form.reset();
-        successMessage.classList.remove("hidden");
-      } else {
-        alert("There was a problem submitting the form. Please try again.");
-      }
+    ScrollReveal().reveal('section', {
+      delay: 100,
+      distance: '50px',
+      duration: 800,
+      origin: 'bottom',
+      easing: 'ease-out',
+      reset: false
     });
+
+    if (window.location.href.includes("success")) {
+      document.getElementById("success-message").style.display = "block";
+    }
   </script>
 
 </body>
